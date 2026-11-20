@@ -1,0 +1,310 @@
+:root {
+    --negro: #111111;
+    --negro-suave: #1d1d1b;
+    --blanco: #ffffff;
+    --hueso: #f5f5f1;
+    --gris: #687078;
+    --linea: #e6e7e5;
+    --verde: #7aa431;
+    --rojo: #d94b35;
+    --sombra: 0 18px 50px rgba(17, 17, 17, .10);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--negro);
+    background: var(--blanco);
+}
+
+.pagina-acceso {
+    min-height: 100vh;
+    background: var(--hueso);
+}
+
+.acceso {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.tarjeta-acceso {
+    width: min(100%, 430px);
+    padding: 44px;
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    border-top: 5px solid var(--verde);
+}
+
+.marca-acceso {
+    width: 106px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 34px;
+    background: var(--negro);
+}
+
+.marca-acceso img {
+    width: 82px;
+    height: auto;
+}
+
+.etiqueta {
+    margin: 0 0 10px;
+    color: var(--verde);
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+h1, h2, p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1;
+    letter-spacing: -.055em;
+}
+
+.texto-secundario {
+    color: var(--gris);
+    line-height: 1.55;
+}
+
+.formulario {
+    display: grid;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.formulario label {
+    margin-top: 9px;
+    font-size: .86rem;
+    font-weight: 700;
+}
+
+.formulario input {
+    width: 100%;
+    border: 1px solid #d8dad7;
+    border-radius: 0;
+    padding: 14px 15px;
+    color: var(--negro);
+    background: var(--blanco);
+    font: inherit;
+}
+
+.formulario input:focus {
+    outline: 3px solid rgba(122, 164, 49, .25);
+    border-color: var(--verde);
+}
+
+.boton {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.boton-principal {
+    margin-top: 18px;
+    padding: 15px 18px;
+    color: var(--blanco);
+    background: var(--negro);
+}
+
+.boton-principal:hover,
+.boton-principal:focus-visible {
+    background: var(--verde);
+}
+
+.mensaje-error {
+    margin: 22px 0 0;
+    padding: 12px 14px;
+    border-left: 4px solid var(--rojo);
+    color: #8b2c20;
+    background: #fff1ee;
+    font-size: .9rem;
+}
+
+.nota-acceso {
+    margin: 26px 0 0;
+    color: var(--gris);
+    font-size: .78rem;
+}
+
+.navbar {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px clamp(20px, 5vw, 72px);
+    color: var(--blanco);
+    background: var(--negro);
+}
+
+.marca-navbar {
+    display: grid;
+    place-items: center;
+    width: 96px;
+    height: 52px;
+    background: var(--blanco);
+}
+
+.marca-navbar img {
+    width: 78px;
+    height: auto;
+}
+
+.usuario-navbar {
+    display: grid;
+    gap: 3px;
+    margin-left: auto;
+    text-align: right;
+}
+
+.usuario-navbar span {
+    font-weight: 700;
+}
+
+.usuario-navbar small {
+    color: #b7beb5;
+    font-size: .75rem;
+}
+
+.boton-salir {
+    padding: 11px 14px;
+    border: 1px solid #444;
+    color: var(--blanco);
+    font-size: .84rem;
+    text-decoration: none;
+}
+
+.boton-salir:hover,
+.boton-salir:focus-visible {
+    border-color: var(--blanco);
+}
+
+.contenido-panel {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: clamp(56px, 9vw, 116px) 0 80px;
+}
+
+.encabezado-panel {
+    max-width: 700px;
+}
+
+.encabezado-panel h1 {
+    font-size: clamp(2.5rem, 7vw, 5.7rem);
+}
+
+.sucursal-usuario {
+    margin: 0 0 18px;
+    color: var(--verde);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.modulos {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1px;
+    margin-top: 72px;
+    border-top: 1px solid var(--linea);
+    border-left: 1px solid var(--linea);
+}
+
+.modulo {
+    grid-column: span 4;
+    min-height: 230px;
+    padding: 26px;
+    border-right: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+    background: var(--blanco);
+}
+
+.modulo-destacado {
+    background: var(--negro);
+    color: var(--blanco);
+}
+
+.modulo-numero {
+    display: block;
+    margin-bottom: 44px;
+    color: var(--verde);
+    font-size: .78rem;
+    font-weight: 800;
+}
+
+.modulo h2 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    letter-spacing: -.025em;
+}
+
+.modulo p {
+    max-width: 260px;
+    color: var(--gris);
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.modulo-destacado p {
+    color: #c5c9c4;
+}
+
+.modulo-estado {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--verde);
+    font-size: .76rem;
+    font-weight: 700;
+}
+
+@media (max-width: 760px) {
+    .tarjeta-acceso {
+        padding: 32px 24px;
+    }
+
+    .navbar {
+        gap: 12px;
+        padding: 10px 16px;
+    }
+
+    .marca-navbar {
+        width: 78px;
+        height: 44px;
+    }
+
+    .marca-navbar img {
+        width: 64px;
+    }
+
+    .usuario-navbar {
+        font-size: .82rem;
+    }
+
+    .boton-salir {
+        padding: 9px;
+        font-size: .76rem;
+    }
+
+    .modulo {
+        grid-column: span 12;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        scroll-behavior: auto !important;
+    }
+}
