@@ -9,14 +9,11 @@ import java.sql.SQLException;
  */
 public final class ConexionBD {
 
-    private static final String URL_POR_DEFECTO =
-            "jdbc:mysql://localhost:3306/superXtra?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true";
-
     private ConexionBD() {
     }
 
     public static Connection obtenerConexion() throws SQLException {
-        String url = obtenerVariable("DB_URL", URL_POR_DEFECTO);
+        String url = obtenerVariableObligatoria("DB_URL");
         String usuario = obtenerVariableObligatoria("DB_USER");
         String contrasena = obtenerVariableObligatoria("DB_PASSWORD");
 
@@ -27,11 +24,6 @@ public final class ConexionBD {
         }
 
         return DriverManager.getConnection(url, usuario, contrasena);
-    }
-
-    private static String obtenerVariable(String nombre, String valorPorDefecto) {
-        String valor = System.getenv(nombre);
-        return valor == null || valor.isBlank() ? valorPorDefecto : valor;
     }
 
     private static String obtenerVariableObligatoria(String nombre) {
