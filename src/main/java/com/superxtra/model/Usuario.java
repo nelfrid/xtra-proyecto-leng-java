@@ -4,9 +4,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Representa al usuario autenticado en el sistema.
- */
+// Clase de usuario
+
 public final class Usuario {
 
     private final int idUsuario;

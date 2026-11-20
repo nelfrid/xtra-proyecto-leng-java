@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * Proporciona conexiones JDBC reutilizables para el backend.
+ * Clase para conectar la base de datos con el backend
  */
 public final class ConexionBD {
 

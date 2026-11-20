@@ -135,6 +135,67 @@ h1 {
     font-size: .9rem;
 }
 
+.mensaje-exito {
+    margin: 28px 0 0;
+    padding: 12px 14px;
+    border-left: 4px solid var(--verde);
+    color: #416018;
+    background: #f1f8e9;
+    font-size: .9rem;
+}
+
+.inventario-operaciones {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 48px;
+}
+
+.tarjeta-operacion {
+    padding: 28px;
+    border: 1px solid var(--linea);
+    background: var(--hueso);
+}
+
+.tarjeta-operacion h2 {
+    margin-bottom: 10px;
+    font-size: 1.35rem;
+}
+
+.tarjeta-operacion > p:not(.etiqueta) {
+    color: var(--gris);
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.tarjeta-operacion select,
+.tarjeta-operacion input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d8dad7;
+    border-radius: 0;
+    background: var(--blanco);
+    font: inherit;
+}
+
+.texto-ayuda,
+.celda-vacia {
+    color: var(--gris);
+    font-size: .86rem;
+}
+
+.boton-peligro {
+    padding: 9px 12px;
+    color: var(--blanco);
+    background: var(--rojo);
+    font-size: .78rem;
+}
+
+.boton-peligro:hover,
+.boton-peligro:focus-visible {
+    background: #ad3525;
+}
+
 .nota-acceso {
     margin: 26px 0 0;
     color: var(--gris);
@@ -237,6 +298,158 @@ h1 {
     color: var(--blanco);
 }
 
+.modulo-enlace {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.modulo-enlace:hover,
+.modulo-enlace:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: -3px;
+}
+
+.enlace-regreso {
+    display: inline-block;
+    margin-bottom: 42px;
+    color: var(--negro);
+    font-size: .86rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.enlace-regreso:hover,
+.enlace-regreso:focus-visible {
+    color: var(--verde);
+}
+
+.encabezado-seccion h1 {
+    max-width: 680px;
+}
+
+.selector-sucursal {
+    max-width: 720px;
+    margin-top: 44px;
+}
+
+.selector-sucursal label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: .86rem;
+    font-weight: 700;
+}
+
+.selector-fila {
+    display: flex;
+    gap: 10px;
+}
+
+.selector-fila select {
+    min-width: 280px;
+    padding: 14px 15px;
+    border: 1px solid var(--linea);
+    border-radius: 0;
+    background: var(--blanco);
+    color: var(--negro);
+    font: inherit;
+}
+
+.selector-fila select:focus {
+    outline: 3px solid rgba(122, 164, 49, .25);
+    border-color: var(--verde);
+}
+
+.resumen-sucursal {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 70px;
+    padding: 22px 0;
+    border-top: 1px solid var(--negro);
+    border-bottom: 1px solid var(--linea);
+}
+
+.resumen-sucursal h2 {
+    margin: 0;
+    font-size: 1.7rem;
+    letter-spacing: -.04em;
+}
+
+.resumen-sucursal p:last-child {
+    margin: 0;
+    color: var(--gris);
+    font-size: .86rem;
+    text-align: right;
+}
+
+.resumen-acciones {
+    display: grid;
+    justify-items: end;
+    gap: 12px;
+}
+
+.resumen-acciones .boton {
+    display: inline-block;
+    margin: 0;
+    text-decoration: none;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    margin-top: 28px;
+    border: 1px solid var(--linea);
+}
+
+.tabla-inventario {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 680px;
+    background: var(--blanco);
+}
+
+.tabla-inventario caption {
+    padding: 18px 20px;
+    color: var(--negro);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.tabla-inventario th,
+.tabla-inventario td {
+    padding: 16px 20px;
+    border-top: 1px solid var(--linea);
+    text-align: left;
+    font-size: .88rem;
+}
+
+.tabla-inventario th {
+    color: var(--gris);
+    background: var(--hueso);
+    font-size: .74rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.vacio {
+    margin-top: 28px;
+    padding: 42px;
+    border: 1px dashed #cfd3cd;
+    background: var(--hueso);
+}
+
+.vacio h2 {
+    margin-bottom: 8px;
+    font-size: 1.35rem;
+}
+
+.vacio p {
+    margin: 0;
+    color: var(--gris);
+}
+
 .modulo-numero {
     display: block;
     margin-bottom: 44px;
@@ -300,6 +513,28 @@ h1 {
 
     .modulo {
         grid-column: span 12;
+    }
+
+    .selector-fila,
+    .resumen-sucursal {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .selector-fila select {
+        min-width: 0;
+    }
+
+    .resumen-sucursal p:last-child {
+        text-align: left;
+    }
+
+    .resumen-acciones {
+        justify-items: start;
+    }
+
+    .inventario-operaciones {
+        grid-template-columns: 1fr;
     }
 }
 

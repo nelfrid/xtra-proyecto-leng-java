@@ -30,35 +30,26 @@
 
         <section class="modulos" aria-label="Módulos disponibles">
             <c:if test="${puedeGestionarSucursales}">
-                <article class="modulo">
+                <a class="modulo modulo-enlace" href="${pageContext.request.contextPath}/sucursales">
                     <span class="modulo-numero">01</span>
                     <h2>Sucursales</h2>
                     <p>Administra la información y el estado de las sucursales.</p>
                     <span class="modulo-estado">Disponible</span>
-                </article>
+                </a>
             </c:if>
 
-            <c:if test="${puedeInsertarInventario}">
-                <article class="modulo">
+            <c:if test="${puedeGestionarInventario}">
+                <a class="modulo modulo-enlace" href="${pageContext.request.contextPath}/inventario">
                     <span class="modulo-numero">02</span>
-                    <h2>Entrada de inventario</h2>
-                    <p>Agrega productos y cantidades al inventario de tu sucursal.</p>
+                    <h2>Gestionar inventario</h2>
+                    <p>Agrega productos existentes o elimínalos del inventario de tu sucursal.</p>
                     <span class="modulo-estado">Disponible</span>
-                </article>
-            </c:if>
-
-            <c:if test="${puedeEliminarInventario}">
-                <article class="modulo">
-                    <span class="modulo-numero">03</span>
-                    <h2>Salida de inventario</h2>
-                    <p>Registra la salida de productos del inventario.</p>
-                    <span class="modulo-estado">Disponible</span>
-                </article>
+                </a>
             </c:if>
 
             <c:if test="${puedeRealizarVentas}">
                 <article class="modulo modulo-destacado">
-                    <span class="modulo-numero">04</span>
+                    <span class="modulo-numero">03</span>
                     <h2>Ventas</h2>
                     <p>Registra ventas y consulta el estado de la operación.</p>
                     <span class="modulo-estado">Disponible</span>
@@ -67,7 +58,7 @@
 
             <c:if test="${puedeVerResumenes}">
                 <article class="modulo">
-                    <span class="modulo-numero">05</span>
+                    <span class="modulo-numero">04</span>
                     <h2>Resúmenes</h2>
                     <p>Consulta el comportamiento de las ventas por periodo.</p>
                     <span class="modulo-estado">Disponible</span>

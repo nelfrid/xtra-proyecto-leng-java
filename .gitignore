@@ -5,6 +5,7 @@ target/
 .idea/
 *.iml
 .vscode/
+.smarttomcat/
 
 # Sistema operativo
 .DS_Store

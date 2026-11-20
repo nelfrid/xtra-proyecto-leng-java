@@ -11,6 +11,8 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
+// Endpoint /login para iniciar sesión
+
 @WebServlet("/login")
 public final class LoginServlet extends HttpServlet {
 

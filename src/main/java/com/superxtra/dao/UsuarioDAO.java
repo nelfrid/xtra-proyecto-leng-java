@@ -35,7 +35,7 @@ public final class UsuarioDAO {
             sentencia.setString(1, correo);
 
             try (ResultSet resultado = sentencia.executeQuery()) {
-                Usuario usuario = null;
+                Usuario usuario = null; // Por defecto usurio no tiene nada
                 Set<String> permisos = new HashSet<>();
 
                 while (resultado.next()) {
