@@ -58,6 +58,20 @@ public final class InventarioServlet extends HttpServlet {
                         entero(solicitud.getParameter("id_producto"), "producto"),
                         usuario.getIdUsuario());
                 solicitud.getSession().setAttribute("mensaje", "Producto eliminado del inventario correctamente.");
+            } else if ("crear".equals(accion)) {
+                exigirPermiso(usuario, "insertar_inventario");
+                servicioInventario.crearProductoYAgregarlo(
+                        sucursal.getIdSucursal(),
+                        entero(solicitud.getParameter("id_categoria"), "categoría"),
+                        entero(solicitud.getParameter("id_unidad_medida"), "unidad de medida"),
+                        valor(solicitud.getParameter("codigo")),
+                        valor(solicitud.getParameter("nombre")),
+                        solicitud.getParameter("descripcion"),
+                        decimal(solicitud.getParameter("precio"), "precio"),
+                        decimal(solicitud.getParameter("cantidad"), "cantidad inicial"),
+                        decimal(solicitud.getParameter("stock_minimo"), "stock mínimo"),
+                        usuario.getIdUsuario());
+                solicitud.getSession().setAttribute("mensaje", "Producto creado y agregado al inventario correctamente.");
             } else {
                 throw new IllegalArgumentException("La operación de inventario no es válida.");
             }
@@ -81,6 +95,8 @@ public final class InventarioServlet extends HttpServlet {
                     servicioInventario.listarPorSucursal(sucursal.getIdSucursal()));
             solicitud.setAttribute("productosDisponibles",
                     servicioInventario.listarProductosDisponibles(sucursal.getIdSucursal()));
+            solicitud.setAttribute("categorias", servicioInventario.listarCategorias());
+            solicitud.setAttribute("unidadesMedida", servicioInventario.listarUnidadesMedida());
             solicitud.setAttribute("sucursalInventario", sucursal);
             solicitud.setAttribute("puedeCambiarSucursal", usuario.tienePermiso("gestionar_sucursales"));
             solicitud.setAttribute("puedeAgregar", usuario.tienePermiso("insertar_inventario"));

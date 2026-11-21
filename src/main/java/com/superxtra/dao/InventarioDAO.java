@@ -1,7 +1,7 @@
 package com.superxtra.dao;
 
 import com.superxtra.config.ConexionBD;
-import com.superxtra.model.ProductoInventario;
+import com.superxtra.model.Inventario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,14 +24,14 @@ public final class InventarioDAO {
             ORDER BY p.nombre
             """;
 
-    public List<ProductoInventario> listarPorSucursal(int idSucursal) throws SQLException {
-        List<ProductoInventario> productos = new ArrayList<>();
+    public List<Inventario> listarPorSucursal(int idSucursal) throws SQLException {
+        List<Inventario> productos = new ArrayList<>();
         try (Connection conexion = ConexionBD.obtenerConexion();
                 PreparedStatement sentencia = conexion.prepareStatement(CONSULTA_POR_SUCURSAL)) {
             sentencia.setInt(1, idSucursal);
             try (ResultSet resultado = sentencia.executeQuery()) {
                 while (resultado.next()) {
-                    productos.add(new ProductoInventario(
+                    productos.add(new Inventario(
                             resultado.getInt("id_producto"),
                             resultado.getString("codigo"),
                             resultado.getString("nombre"),

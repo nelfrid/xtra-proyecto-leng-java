@@ -48,21 +48,27 @@
             </c:if>
 
             <c:if test="${puedeRealizarVentas}">
-                <article class="modulo modulo-destacado">
+                <a class="modulo modulo-enlace modulo-destacado" href="${pageContext.request.contextPath}/ventas">
                     <span class="modulo-numero">03</span>
                     <h2>Ventas</h2>
                     <p>Registra ventas y consulta el estado de la operación.</p>
                     <span class="modulo-estado">Disponible</span>
-                </article>
+                </a>
             </c:if>
 
             <c:if test="${puedeVerResumenes}">
-                <article class="modulo">
+                <a class="modulo modulo-enlace" href="${pageContext.request.contextPath}/historial-ventas">
                     <span class="modulo-numero">04</span>
-                    <h2>Resúmenes</h2>
-                    <p>Consulta el comportamiento de las ventas por periodo.</p>
+                    <h2>Historial de ventas</h2>
+                    <p>Consulta todas las operaciones, vendedores y métodos de pago.</p>
                     <span class="modulo-estado">Disponible</span>
-                </article>
+                </a>
+                <a class="modulo modulo-enlace" href="${pageContext.request.contextPath}/resumenes-ventas">
+                    <span class="modulo-numero">05</span>
+                    <h2>Resúmenes</h2>
+                    <p>Consulta totales y ventas agrupadas por método de pago.</p>
+                    <span class="modulo-estado">Disponible</span>
+                </a>
             </c:if>
         </section>
     </main>

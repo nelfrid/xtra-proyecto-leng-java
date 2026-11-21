@@ -144,11 +144,125 @@ h1 {
     font-size: .9rem;
 }
 
+.comprobante-venta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 28px;
+    border: 1px solid var(--linea);
+    background: var(--linea);
+}
+
+.comprobante-venta div {
+    display: grid;
+    gap: 8px;
+    padding: 18px 20px;
+    background: var(--hueso);
+}
+
+.comprobante-venta span {
+    color: var(--gris);
+    font-size: .74rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.comprobante-venta strong {
+    font-size: 1.3rem;
+}
+
+.comprobante-total {
+    color: var(--blanco);
+    background: var(--negro) !important;
+}
+
+.comprobante-total span { color: #b7beb5; }
+
+.campo-busqueda {
+    display: grid;
+    gap: 8px;
+    max-width: 420px;
+    margin-top: 28px;
+    color: var(--gris);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.campo-busqueda input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d8dad7;
+    border-radius: 0;
+    background: var(--blanco);
+    color: var(--negro);
+    font: inherit;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.campo-busqueda input:focus,
+.metodo-pago-opcion input:focus-visible + span {
+    outline: 3px solid rgba(122, 164, 49, .25);
+    outline-offset: 2px;
+}
+
+.metodos-pago {
+    margin: 30px 0 0;
+    padding: 0;
+    border: 0;
+}
+
+.metodos-pago legend {
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.metodos-pago-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.metodo-pago-opcion {
+    position: relative;
+    cursor: pointer;
+}
+
+.metodo-pago-opcion input {
+    position: absolute;
+    opacity: 0;
+}
+
+.metodo-pago-opcion span {
+    display: block;
+    padding: 15px 12px;
+    border: 1px solid var(--linea);
+    background: var(--hueso);
+    font-size: .86rem;
+    font-weight: 700;
+    text-align: center;
+    transition: border-color .15s ease, background .15s ease, color .15s ease;
+}
+
+.metodo-pago-opcion:hover span,
+.metodo-pago-opcion input:checked + span {
+    border-color: var(--verde);
+    color: var(--blanco);
+    background: var(--verde);
+}
+
 .inventario-operaciones {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
     margin-top: 48px;
+}
+
+.tarjeta-crear {
+    border-top: 4px solid var(--verde);
 }
 
 .tarjeta-operacion {
@@ -440,6 +554,47 @@ h1 {
     background: var(--hueso);
 }
 
+.metricas-ventas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 48px 0 28px;
+}
+
+.metrica-venta {
+    display: grid;
+    gap: 12px;
+    padding: 28px;
+    border: 1px solid var(--linea);
+    background: var(--hueso);
+}
+
+.metrica-venta span {
+    color: var(--gris);
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.metrica-venta strong {
+    font-size: 2.5rem;
+    letter-spacing: -.05em;
+}
+
+.metrica-destacada {
+    color: var(--blanco);
+    background: var(--negro);
+}
+
+.metrica-destacada span { color: #b7beb5; }
+
+.estado-venta {
+    color: var(--verde);
+    font-size: .75rem;
+    font-weight: 700;
+}
+
 .vacio h2 {
     margin-bottom: 8px;
     font-size: 1.35rem;
@@ -534,6 +689,15 @@ h1 {
     }
 
     .inventario-operaciones {
+        grid-template-columns: 1fr;
+    }
+
+    .metricas-ventas {
+        grid-template-columns: 1fr;
+    }
+
+    .comprobante-venta,
+    .metodos-pago-grid {
         grid-template-columns: 1fr;
     }
 }

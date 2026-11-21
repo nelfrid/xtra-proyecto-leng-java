@@ -44,6 +44,48 @@
 
         <div class="inventario-operaciones">
             <c:if test="${puedeAgregar}">
+                <section class="tarjeta-operacion tarjeta-crear">
+                    <p class="etiqueta">Nuevo producto</p>
+                    <h2>Crear y agregar</h2>
+                    <p>Crea un producto que todavía no exista y agrégalo directamente a esta sucursal.</p>
+                    <c:choose>
+                        <c:when test="${empty categorias}">
+                            <p class="texto-ayuda">No existen categorías activas para crear productos.</p>
+                        </c:when>
+                        <c:otherwise>
+                            <form method="post" action="${pageContext.request.contextPath}/inventario" class="formulario">
+                                <input type="hidden" name="accion" value="crear">
+                                <input type="hidden" name="id_sucursal" value="${sucursalInventario.idSucursal}">
+                                <label for="codigo">Código o SKU</label>
+                                <input id="codigo" name="codigo" type="text" maxlength="50" required>
+                                <label for="nombre">Nombre</label>
+                                <input id="nombre" name="nombre" type="text" maxlength="150" required>
+                                <label for="descripcion">Descripción</label>
+                                <input id="descripcion" name="descripcion" type="text" maxlength="255">
+                                <label for="id_categoria">Categoría</label>
+                                <select id="id_categoria" name="id_categoria" required>
+                                    <c:forEach var="categoria" items="${categorias}">
+                                        <option value="${categoria.idCategoria}">${categoria.nombre}</option>
+                                    </c:forEach>
+                                </select>
+                                <label for="id_unidad_medida">Unidad de medida</label>
+                                <select id="id_unidad_medida" name="id_unidad_medida" required>
+                                    <c:forEach var="unidad" items="${unidadesMedida}">
+                                        <option value="${unidad.idUnidadMedida}">${unidad.nombre} (${unidad.abreviatura})</option>
+                                    </c:forEach>
+                                </select>
+                                <label for="precio">Precio</label>
+                                <input id="precio" name="precio" type="number" min="0" step="0.01" required>
+                                <label for="cantidad_nueva">Cantidad inicial</label>
+                                <input id="cantidad_nueva" name="cantidad" type="number" min="0" step="0.001" value="0" required>
+                                <label for="stock_minimo_nuevo">Stock mínimo</label>
+                                <input id="stock_minimo_nuevo" name="stock_minimo" type="number" min="0" step="0.001" value="0" required>
+                                <button type="submit" class="boton boton-principal">Crear producto</button>
+                            </form>
+                        </c:otherwise>
+                    </c:choose>
+                </section>
+
                 <section class="tarjeta-operacion">
                     <p class="etiqueta">Alta</p>
                     <h2>Agregar producto</h2>

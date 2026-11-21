@@ -2,7 +2,7 @@ package com.superxtra.servicio;
 
 import com.superxtra.dao.InventarioDAO;
 import com.superxtra.dao.SucursalDAO;
-import com.superxtra.model.ProductoInventario;
+import com.superxtra.model.Inventario;
 import com.superxtra.model.Sucursal;
 import java.sql.SQLException;
 import java.util.List;
@@ -28,7 +28,7 @@ public final class ServicioSucursales {
         return sucursalDAO.buscarActivaPorId(idSucursal);
     }
 
-    public List<ProductoInventario> listarProductosPorSucursal(int idSucursal) throws SQLException {
+    public List<Inventario> listarProductosPorSucursal(int idSucursal) throws SQLException {
         return inventarioDAO.listarPorSucursal(idSucursal);
     }
 }
